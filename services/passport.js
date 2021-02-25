@@ -19,13 +19,16 @@ passport.use(
             clientSecret: keys.googleClientSecret,
             callbackURL: '/auth/google/callback'
         }, 
-        (profile) => {
-            User.findOne({ googleID: profile.id })
-                .then(existingUser => {
-                    if (!existingUser) {
-                        new User({ googleID: profile.id }).save()   
-                    }
-                })
+        (acsessToken, refreshToken, profile, done) => {
+            User.findOne({ googleID: profile.id }).then(existingUser => {
+                if (existingUser) {
+                    done(null, existingUser)
+                } else {
+                    new User({ googleID: profile.id })
+                    .save()
+                    .then(newUser => done(null, newUser))
+                } 
+            });
         }
     ) 
 );
