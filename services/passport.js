@@ -16,6 +16,13 @@ passport.serializeUser((user, done) => {
     done(null, user.id) 
 })
 
+passport.deserializeUser((id, done) => {
+    User.findById(id)
+        .then(user => {
+            done(null, user)
+        })
+})
+
 passport.use(
     new GoogleStrategy(
         {
@@ -29,8 +36,8 @@ passport.use(
                     done(null, existingUser)
                 } else {
                     new User({ googleID: profile.id })
-                    .save()
-                    .then(newUser => done(null, newUser)) 
+                        .save()
+                        .then(newUser => done(null, newUser)) 
                 } 
             });
         }
