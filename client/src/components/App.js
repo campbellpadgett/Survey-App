@@ -1,5 +1,3 @@
-import { serializeUser } from "passport";
-
 const App = () => {
   return (
     <div className='ui container'>
