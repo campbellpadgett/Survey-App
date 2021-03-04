@@ -1,9 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Header = () => {
-
-
-
     return (
         <div>
             <nav>
