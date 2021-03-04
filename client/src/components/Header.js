@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Header = () => {
+
+
+
     return (
         <div>
-            Header
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="/" class="center brand-logo">Emaily</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="/auth/google">Login With Google</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
     );
 }

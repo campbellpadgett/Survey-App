@@ -10,7 +10,7 @@ import Landing from './Landing'
 
 const App = () => {
   return (
-    <div className='ui container'>
+    <div className='container'>
 
       <BrowserRouter>
         <div>
@@ -26,4 +26,3 @@ const App = () => {
 }
 
 export default App;
- 
