@@ -8,9 +8,9 @@ const Header = props => {
             case null:
                 return "working on it..."
             case false:
-                return 'Sign Into Google'
+                return <a href="/auth/google">Sign Into Google</a>
             default:
-                return 'Log Out'
+                return <a href='/api/logout'>Log Out</a>
         }
     }
 
@@ -20,7 +20,7 @@ const Header = props => {
                 <div class="nav-wrapper">
                     <a href="/" class="center brand-logo">Emaily</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="/auth/google">{renderContent()}</a></li>
+                        <li>{renderContent()}</li>
                     </ul>
                 </div>
             </nav>
