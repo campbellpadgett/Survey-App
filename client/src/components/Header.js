@@ -19,7 +19,9 @@ const Header = props => {
         <div>
             <nav>
                 <div class="nav-wrapper">
-                    <Link to="/" class="center brand-logo">Emaily</Link>
+                    <Link to={props.auth ? "/surveys" : "/"} class="center brand-logo">
+                        Emaily
+                    </Link>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li>{renderContent()}</li>
                     </ul>
