@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Header = props => {
 
@@ -18,7 +19,7 @@ const Header = props => {
         <div>
             <nav>
                 <div class="nav-wrapper">
-                    <a href="/" class="center brand-logo">Emaily</a>
+                    <Link to="/" class="center brand-logo">Emaily</Link>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li>{renderContent()}</li>
                     </ul>

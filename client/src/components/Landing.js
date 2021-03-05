@@ -1,11 +1,28 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
-const Landing = () => {
+const Landing = props => {
+
+    const renderContent = () => {
+            switch(props.auth) {
+                case null:
+                    return "working on it..."
+                case false:
+                    return 'Welcome to Emaily!'
+                default:
+                    return 'Welcome Back!'
+            }
+        }
+
     return (
         <div>
-            Landing
+            {renderContent()}
         </div>
     );
 }
 
-export default Landing;
+const mapStateToProps = ({ auth }) => {
+    return { auth }
+}
+
+export default connect(mapStateToProps)(Landing);
