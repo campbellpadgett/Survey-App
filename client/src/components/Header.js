@@ -1,4 +1,5 @@
 import React from 'react';
+import Payments from './Payments'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
@@ -11,19 +12,22 @@ const Header = props => {
             case false:
                 return <a href="/auth/google">Sign Into Google</a>
             default:
-                return <a href='/api/logout'>Log Out</a>
+                return [
+                <li key={Math.random()}><Payments /></li>,  
+                <li key={Math.random()}><a href='/api/logout'>Log Out</a></li>
+            ]
         }
     }
 
     return (
         <div>
             <nav>
-                <div class="nav-wrapper">
-                    <Link to={props.auth ? "/surveys" : "/"} class="center brand-logo">
+                <div className="nav-wrapper">
+                    <Link to={props.auth ? "/surveys" : "/"} className="center brand-logo">
                         Emaily
                     </Link>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li>{renderContent()}</li>
+                    <ul id="nav-mobile" className="right hide-on-med-and-down">
+                        {renderContent()}
                     </ul>
                 </div>
             </nav>

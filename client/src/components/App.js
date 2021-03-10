@@ -1,5 +1,3 @@
-
-
 import React, { useEffect } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -10,11 +8,11 @@ import SurveyNew from './SurveyNew'
 import Landing from './Landing'
 
 
-const App = props => {
+const App = ({ fetchUser }) => {
 
   useEffect(() => {
-    props.fetchUser()
-  }, [])
+    fetchUser()
+  }, [fetchUser])
 
   return (
     <div className='container'>
