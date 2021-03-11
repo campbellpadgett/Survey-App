@@ -12,7 +12,7 @@ const App = ({ fetchUser }) => {
 
   useEffect(() => {
     fetchUser()
-  }, [fetchUser])
+  }, [])
 
   return (
     <div className='container'>
