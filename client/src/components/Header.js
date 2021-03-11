@@ -14,6 +14,7 @@ const Header = props => {
             default:
                 return [
                 <li key={Math.random()}><Payments /></li>,  
+                <li key={Math.random()} style={{ margin: '0 10px' }}>Credits: {props.auth.credits}</li>,
                 <li key={Math.random()}><a href='/api/logout'>Log Out</a></li>
             ]
         }
