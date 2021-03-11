@@ -8,10 +8,10 @@ import SurveyNew from './SurveyNew'
 import Landing from './Landing'
 
 
-const App = ({ fetchUser }) => {
+const App = props => {
 
   useEffect(() => {
-    fetchUser()
+    props.fetchUser()
   }, [])
 
   return (
