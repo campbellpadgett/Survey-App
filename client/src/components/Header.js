@@ -8,7 +8,7 @@ const Header = props => {
     const renderContent = () => {
         switch(props.auth) {
             case null:
-                return;
+                return <a href="/auth/google">Sign Into Google</a>
             case false:
                 return <a href="/auth/google">Sign Into Google</a>
             default:
