@@ -1,47 +1,44 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import Payments from './Payments';
+import React from 'react';
+import Payments from './Payments'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
-class Header extends Component {
-  renderContent() {
-    switch (this.props.auth) {
-      case null:
-        return;
-      case false:
-        return <li><a href="/auth/google">Login With Google</a></li>;
-      default:
-        return [
-          <li key="1"><Payments /></li>,
-          <li key="3" style={{ margin: '0 10px' }}>
-            Credits: {this.props.auth.credits}
-          </li>,
-          <li key="2"><a href="/api/logout">Logout</a></li>
-        ];
+const Header = props => {
+
+    const renderContent = () => {
+        switch(props.auth) {
+            default: return;
+            case null:
+                return <a href="/auth/google">Sign Into Google</a>
+            case false:
+                return <a href="/auth/google">Sign Into Google</a>
+            case true:
+                return [
+                <li key={Math.random()}><Payments /></li>,  
+                <li key={Math.random()} style={{ margin: '0 10px' }}>Credits: {props.auth.credits}</li>,
+                <li key={Math.random()}><a href='/api/logout'>Log Out</a></li>
+            ]
+        }
     }
-  }
 
-  render() {
     return (
-      <nav>
-        <div className="nav-wrapper">
-          <Link
-            to={this.props.auth ? '/surveys' : '/'}
-            className="left brand-logo"
-          >
-            Emaily
-          </Link>
-          <ul className="right">
-            {this.renderContent()}
-          </ul>
+        <div>
+            <nav>
+                <div className="nav-wrapper">
+                    <Link to={props.auth ? "/surveys" : "/"} className="center brand-logo">
+                        Emaily
+                    </Link>
+                    <ul id="nav-mobile" className="right hide-on-med-and-down">
+                        {renderContent()}
+                    </ul>
+                </div>
+            </nav>
         </div>
-      </nav>
     );
-  }
 }
 
-function mapStateToProps({ auth }) {
-  return { auth };
+const mapStateToProps = ({ auth }) => {
+    return { auth }
 }
 
 export default connect(mapStateToProps)(Header);
