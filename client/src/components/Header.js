@@ -8,11 +8,7 @@ const Header = props => {
     const renderContent = () => {
         switch(props.auth) {
             case null:
-                return [
-                <li key={Math.random()}><Payments /></li>,  
-                <li key={Math.random()} style={{ margin: '0 10px' }}>Credits: {props.auth.credits}</li>,
-                <li key={Math.random()}><a href='/api/logout'>Log Out</a></li>
-            ]
+                return 
             case false:
                 return <a href="/auth/google">Sign Into Google</a>
             default:
