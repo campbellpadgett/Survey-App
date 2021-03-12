@@ -10,6 +10,8 @@ import Landing from './Landing'
 
 const App = props => {
 
+  console.log(props)
+
   useEffect(() => {
     props.fetchUser()
   }, [])
