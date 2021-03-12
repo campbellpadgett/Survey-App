@@ -7,11 +7,12 @@ const Header = props => {
 
     const renderContent = () => {
         switch(props.auth) {
+            default: return;
             case null:
                 return <a href="/auth/google">Sign Into Google</a>
             case false:
                 return <a href="/auth/google">Sign Into Google</a>
-            default:
+            case true:
                 return [
                 <li key={Math.random()}><Payments /></li>,  
                 <li key={Math.random()} style={{ margin: '0 10px' }}>Credits: {props.auth.credits}</li>,
