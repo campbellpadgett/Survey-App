@@ -5,7 +5,9 @@ const surveySchema = new Schema({
     title: String,
     subject: String,
     body: String,
-    recipients: [String]
+    recipients: [String],
+    yes: Number,
+    no: Number
 });
 
-mongoose.model('survey', surveySchema);
+mongoose.model('surveys', surveySchema);

@@ -3,7 +3,7 @@ const requireLogin = require('../middleware/requireLogin')
 module.exports = app => {
 
     app.get('/api/surveys', requireLogin, (req, res) => {
-        // return surveys
+        res.send('list of surveys')
     })
 
     app.post('/api/surveys/webhooks', requireLogin, (req, res) => {
