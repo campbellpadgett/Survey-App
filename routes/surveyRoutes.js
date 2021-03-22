@@ -38,8 +38,8 @@ module.exports = app => {
         // record feedback from user
     })
 
-    app.post('/api/surveys', requireLogin, (req, res) => {
-        // create a new survey
+    app.get('/api/surveys', (req, res) => {
+        res.send('thanks for voting')
     })
 
 }
