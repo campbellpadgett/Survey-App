@@ -1,29 +1,30 @@
 import React from 'react';
 import SurveyField from './SurveyField'
+import { reduxForm, Field } from 'redux-form'
 
 const SurveyForm = () => {
     return (
         <div>
             <div className='ui container'>
-                <form className='col s12'>
+                <form  className='col s12'>
                     <div class="row">
                         <div class="input-field col s12">
-                            <SurveyField label={'Title'} />
+                            <Field type='text' name='surveyTitle' title='Title' component={SurveyField} />
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <SurveyField label={'Subject'} />
+                            <Field type='text' name='surveySubject' title='Subject' component={SurveyField} />
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <SurveyField label={'Body'} />
+                            <Field type='text' name='surveyBody' title='Body' component={SurveyField} />
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <SurveyField label={'Recipients'} />
+                            <Field type='text' name='surveyRecipients' title='Recipients' component={SurveyField} />
                         </div>
                     </div>
 
@@ -35,4 +36,4 @@ const SurveyForm = () => {
     );
 }
 
-export default SurveyForm;
+export default reduxForm({ form: 'surveyForm' })(SurveyForm);

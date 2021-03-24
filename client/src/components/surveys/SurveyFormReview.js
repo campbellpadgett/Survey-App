@@ -3,7 +3,7 @@ import React from 'react';
 const SurveyFormReview = () => {
     return (
         <div>
-            surveyromf_review
+            surveyReview
         </div>
     );
 }
