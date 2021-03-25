@@ -38,7 +38,7 @@ module.exports = app => {
         // record feedback from user
     })
 
-    app.get('/api/surveys', (req, res) => {
+    app.get('/api/surveys/thanks', (req, res) => {
         res.send('thanks for voting')
     })
 

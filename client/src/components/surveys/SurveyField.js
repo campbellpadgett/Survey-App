@@ -1,9 +1,11 @@
 import React from 'react';
 
-const SurveyField = props => {
+const SurveyField = ({ label, palceholder, input, meta: { error, touched } }) => {
     return (
         <div>
-            {props.title}
+            <p>{label}</p>
+            <input  placeholder={palceholder} {...input} />
+            <p style={{color: 'red'}}>{touched && error}</p>
         </div>
     );
 }

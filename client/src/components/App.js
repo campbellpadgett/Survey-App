@@ -6,16 +6,13 @@ import Header from './Header'
 import Dashboard from './Dashboard'
 import SurveyNew from './surveys/SurveyNew'
 import Landing from './Landing'
-import SurveyFormReview from './surveys/SurveyFormReview'
 
 
-const App = props => {
-
-  console.log(props)
+const App = ({ fetchUser }) => {
 
   useEffect(() => {
-    props.fetchUser()
-  }, [])
+    fetchUser()
+  }, [fetchUser])
 
   return (
     <div className='container'>
