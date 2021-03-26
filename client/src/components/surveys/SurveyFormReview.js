@@ -1,9 +1,18 @@
 import React from 'react';
 
-const SurveyFormReview = () => {
+
+
+
+
+
+
+
+
+
+const SurveyFormReview = props => {
     return (
         <div>
-            surveyReview
+            <h5>Please confirm your entries</h5>
         </div>
     );
 }
