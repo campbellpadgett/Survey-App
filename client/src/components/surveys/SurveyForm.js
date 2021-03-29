@@ -43,7 +43,7 @@ const SurveyForm = props => {
 function validate(values) {
 
     const errors = {}
-    errors.surveyRecipients = validateEmails(values.surveyRecipients || '')
+    errors.recipients = validateEmails(values.recipients || '')
     
     surveyFields.forEach(({ name }) => {
         if (!values[name]) { errors[name] = 'Value required for your survey!' }
