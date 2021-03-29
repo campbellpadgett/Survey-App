@@ -59,7 +59,7 @@ const SurveyForm = props => {
 
     return (
         <div className='ui container'>
-            <form onSubmit={props.handleSubmit(values => console.log(values))} className='col s12'>
+            <form onSubmit={props.handleSubmit(props.onSurveySubmit)} className='col s12'>
                 
                 {renderFields()}
 
@@ -83,7 +83,7 @@ function validate(values) {
     return errors
 }
 
-export default reduxForm({ validate, form: 'surveyForm' })(SurveyForm);
+export default reduxForm({ validate, form: 'surveyForm', destroyOnUnmount: false })(SurveyForm);
 
 
 
