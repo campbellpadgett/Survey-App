@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const { Path } = require('path-parser')
+const Path = require('path')
 const { URL } = require('url')
 const mongoose = require('mongoose')
 const requireLogin = require('../middleware/requireLogin')
@@ -60,11 +60,11 @@ module.exports = app => {
                         $elemMatch: { email: email, responded: false }
                     }
                 },
-                {
-                    $inc: { [choice]: 1 },
-                    $set: { 'recipients.$.responded': true },
-                    lastResponded: new Date()
-                }).exec()
+                    {
+                        $inc: { [choice]: 1 },
+                        $set: { 'recipients.$.responded': true },
+                        lastResponded: new Date()
+                    }).exec()
             })
             .value()
 
