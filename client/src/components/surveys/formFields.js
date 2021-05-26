@@ -18,7 +18,7 @@ export default [
         key: 2,
         type: 'text',
         name: 'body',
-        label: 'Body',
+        label: 'Question',
         placeholder: 'Lorem Ipsum Badou Yipsum...'
     },
     {
